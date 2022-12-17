@@ -3,7 +3,7 @@
 #[test]
 fn array_index() {
     let arr: [i32; 5] = [1, 2, 3, 4, 5];
-    assert!(arr[__] == 1);
+    assert!(arr[0] == 1);
 }
 
 // A new fixed size array can be created by declaring the type of its elements
@@ -11,7 +11,7 @@ fn array_index() {
 // [i32; 0] = []
 #[test]
 fn array_empty() {
-    let arr: __;
+    let arr: [i32; 0] = [];
     assert!(arr.len() == 0);
 }
 
@@ -20,10 +20,9 @@ fn array_empty() {
 // that error in this example.
 #[test]
 #[should_panic]
-#[allow(const_err)]
 fn out_of_index() {
     let arr: [&'static str; 5] = ["rust", "is", "mostly", "for", "nerds"];
-    arr[__];
+    arr[6];
 }
 
 // Elements can be replaced in an array at a certain index.
